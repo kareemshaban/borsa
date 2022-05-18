@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-spinner name="lines" class="spinner" [hidden]="loaded"></ion-spinner>
+
+  <img src="../../../assets/images/logo.png" class="logo">
+  <ion-card class="card" [hidden]="!loaded">
+      <ion-input class="input" type="mail"  [(ngModel)]="email" placeholder="Email" ></ion-input>
+      <ion-input type="password"  [(ngModel)]="password"  placeholder="Password"  class="input"></ion-input>
+      <ion-label class="label">Do Not Have an account ? <span style="text-decoration: underline;" (click)="GoToLgin()">Sign Up Now</span></ion-label>
+      <ion-label class="label" (click)="Guest()">Login As Guest ? </ion-label>
+
+    </ion-card>
+    <div class="btn" (click)="LoginUser()">
+      GO
+    </div>
+  </ion-content>
+  

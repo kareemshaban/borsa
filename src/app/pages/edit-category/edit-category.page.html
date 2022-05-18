@@ -1,0 +1,22 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" style="color: #CDB585;">
+      <ion-back-button style="color: #CDB585;" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;">تعديا  سهم </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner name="lines" class="spinner" [hidden]="loaded"></ion-spinner>
+
+  <img src="../../../assets/images/logo.png" class="logo">
+  <ion-card class="card" [hidden]="!loaded">
+      <ion-input class="input" type="text"  [(ngModel)]="name" placeholder="Name" ></ion-input>
+      <ion-input type="text"  [(ngModel)]="code"  placeholder="Code"  class="input"></ion-input>
+    </ion-card>
+    <div class="btn" (click)="AddNew()">
+      GO
+    </div>
+
+</ion-content>

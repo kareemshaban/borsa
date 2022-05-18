@@ -1,0 +1,40 @@
+ion-content{
+    --background: url('../../../assets/images/bg.png') no-repeat center center / cover;
+}
+.list{
+    background: transparent;
+    --background:transparent;
+    background-color: transparent;
+    margin-top: 50px;
+}
+.item{
+    background: transparent;
+    --background:transparent;
+    background-color: transparent;
+    direction: rtl;
+}
+.label{
+    color: #CDB585;
+    text-align: right;
+    margin: 5px;
+   font-size: 10pt;
+}
+.icon{
+    color: red;
+    font-size: 20pt;
+
+}
+.icon2{
+    color: #CDB585;
+    font-size: 20pt;
+}
+.serachbar{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 95%;
+    margin: auto;
+    z-index: 10;
+    color: #CDB585;
+  }

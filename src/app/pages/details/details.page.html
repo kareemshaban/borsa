@@ -1,0 +1,23 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" style="color: #CDB585;">
+      <ion-back-button style="color: #CDB585;" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;">   {{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-icon name="share-social" class="share-icon" (click)="Share()"></ion-icon>
+<img [src]="img" class="logo" [hidden]="img == ''" (click)="OpenImage(img)">
+<img src="../../../assets/images/logo.png" class="logo2" [hidden]="img != ''">
+
+
+<ion-card class="card" >
+  <ion-label class="input" >{{cata}}</ion-label>
+  <ion-label class="input" >{{titlee}}</ion-label>
+  <ion-item text-wrap class="input" style="color: white; white-space: pre-wrap; direction: rtl;" >
+    <b>{{details}}</b></ion-item>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,10 @@
+{
+  "name": "borsa",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

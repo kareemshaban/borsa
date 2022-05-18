@@ -1,0 +1,34 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" class="btn">
+      <ion-menu-button style="color: #CDB585;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;"> التوصيات</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list class="list">
+
+
+<ion-card *ngFor="let new of recommendations; let i = index" lines="none" class="item">
+  <ion-card-header style="justify-content: center; display: flex;">
+    <ion-icon name="trash" class="icon"  [hidden] = "!isAdmin" (click)="Delete(new.id)"></ion-icon>
+    <ion-icon name="create" class="icon2"  [hidden] = "!isAdmin" (click)="Edit(i)"></ion-icon>
+    <ion-icon name="alert-circle" class="icon2"  [hidden] = "isAdmin"></ion-icon>
+    <ion-icon name="share-social" class="icon2"  (click)="Share(i)" [hidden] = "!isAdmin" ></ion-icon>
+  </ion-card-header>
+  <ion-card-content>
+    <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br>{{new.details}}</p>
+  </ion-card-content>
+
+
+
+</ion-card>
+</ion-list>
+<ion-fab horizontal="start" vertical="bottom" slot="fixed" [hidden] = "!isAdmin">
+  <ion-fab-button color="dark"  (click) ="AddNew()">
+    <ion-icon name="add" style="color: #CDB585;"></ion-icon>
+  </ion-fab-button>
+  </ion-fab>
+</ion-content>

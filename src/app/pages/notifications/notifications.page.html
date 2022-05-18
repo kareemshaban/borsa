@@ -1,0 +1,25 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" class="btn">
+      <ion-menu-button style="color: #CDB585;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;"> التنبيهات</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="list">
+    <ion-item *ngFor="let notification of notifications; let i = index" class="item">
+    <p class="label">{{notification.title}} 
+<br class="label2">
+{{notification.details}}
+    </p>
+
+    </ion-item>
+    </ion-list>
+    <ion-fab horizontal="start" vertical="bottom" slot="fixed" >
+      <ion-fab-button color="dark"  (click) ="MakAsRead()">
+        <ion-icon name="checkmark-done-outline" style="color: #CDB585;"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+</ion-content>

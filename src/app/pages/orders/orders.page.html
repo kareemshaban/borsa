@@ -1,0 +1,20 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" class="btn">
+      <ion-menu-button style="color: #CDB585;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;"> طلبات التحليل</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list class="list">
+<ion-item *ngFor="let new of news; let i = index" class="item">
+<p class="label"> {{new.user.name}}  
+  <br>{{new.user.email }}
+  <br>{{new.cat.code + ' ' + new.cat.name }}
+</p>
+<ion-icon name="trash" class="icon" slot="end" (click)="Delete(new.id)"></ion-icon>
+</ion-item>
+</ion-list>
+</ion-content>

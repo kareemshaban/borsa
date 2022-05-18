@@ -1,0 +1,30 @@
+ion-content{
+    --background: url('../../../assets/images/bg.png') no-repeat center center / cover;
+}
+.list{
+    background: transparent;
+    --background:transparent;
+    background-color: transparent;
+}
+.item{
+    background: transparent;
+    --background:transparent;
+    background-color: transparent;
+    direction: rtl;
+}
+.label{
+    color: #CDB585;
+    display: block;
+    text-align: center;
+    margin: 5px auto;
+   font-size: 10pt;
+}
+.icon{
+    color: red;
+    font-size: 20pt;
+
+}
+.icon2{
+    color: #CDB585;
+    font-size: 20pt;
+}

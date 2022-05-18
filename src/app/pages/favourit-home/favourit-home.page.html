@@ -1,0 +1,56 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" style="color: #CDB585;">
+      <ion-back-button style="color: #CDB585;" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="btn">نتائج السهم</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div >
+  <ion-segment scrollable="true" dir="rtl" [(ngModel)]="cat" >
+    <ion-segment-button value="0"  style="font-family: Kufam !important;">  الاخبار
+    </ion-segment-button>
+    <ion-segment-button value="1" style="font-family: Kufam !important;">  التحليلات
+    </ion-segment-button>
+    <ion-segment-button  value="2"   style="font-family: Kufam !important;"> التوصيات</ion-segment-button>
+  
+
+  </ion-segment>
+  <ion-list class="list" [hidden] ="cat != 0">
+    <ion-item *ngFor="let new of news; let i = index"  class="item" (click)="OpenDetails(0 , i)">
+    <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br>
+      <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+    </p>
+  
+    <ion-chip slot="end" >
+      <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+      <ion-icon name="eye" class="icon2"></ion-icon>
+    </ion-chip>
+    </ion-item>
+    </ion-list>
+    <ion-list class="list" [hidden] ="cat !=1">
+      <ion-item *ngFor="let new of analysis; let i = index"  class="item" (click)="OpenDetails(1 , i)"> 
+      <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br >
+        <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+      </p>
+      <ion-chip slot="end" >
+        <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+        <ion-icon name="eye" class="icon2"></ion-icon>
+      </ion-chip>
+      </ion-item>
+      </ion-list>
+      <ion-list class="list" [hidden] ="cat != 2">
+        <ion-item *ngFor="let new of recommendations; let i = index"  class="item" (click)="OpenDetails(2 , i)"> 
+        <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br >
+          <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+          <ion-chip slot="end" >
+            <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+            <ion-icon name="eye" class="icon2"></ion-icon>
+          </ion-chip>
+        </p>
+        </ion-item>
+        </ion-list>
+      </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" style="color: #CDB585;">
+      <ion-back-button style="color: #CDB585;" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #CDB585;">تعديل  خبر </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner name="lines" class="spinner" [hidden]="loaded"></ion-spinner>
+
+  <img src="../../../assets/images/logo.png" class="logo">
+  <ion-card class="card" [hidden]="!loaded">
+    <ion-item style="background-color: transparent; background: transparent;  --background: transparent; " lines="none">
+      <ion-label style="color: #CDB585 ;">اختر السهم</ion-label>
+      <ion-select [(ngModel)]="cat" [value] ="cat" style=" color: #CDB585;
+      width: 70%;
+      min-width: 70%;
+      text-align: right;">
+        <ion-select-option *ngFor="let cat of categories; let i = index" [value]="i"> {{cat.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-input class="input" type="text"  [(ngModel)]="title" placeholder="Title" ></ion-input>
+    <ion-textarea class="input"  placeholder="Enter more information here..." [(ngModel)]="details"></ion-textarea>
+    </ion-card>
+    <div class="btn" (click)="AddNew()">
+      GO
+    </div>
+
+</ion-content>

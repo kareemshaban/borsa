@@ -1,0 +1,87 @@
+<ion-header style="--background: #353E45 !important;">
+  <ion-toolbar style="--background: #353E45 !important;">
+    <ion-buttons slot="start" class="btn">
+      <ion-menu-button class="btn"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="btn">BorsaDaily </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="../../../assets/images/logo.png" class="logo" [hidden] ="!isAdmin">
+  <div [hidden] ="isAdmin">
+  <ion-segment scrollable="true" dir="rtl" [(ngModel)]="cat" >
+    <ion-segment-button value="0"  style="font-family: Kufam !important;">  الاخبار
+    </ion-segment-button>
+    <ion-segment-button value="1" style="font-family: Kufam !important;">  التحليلات
+    </ion-segment-button>
+    <ion-segment-button  value="2"   style="font-family: Kufam !important;"> التوصيات</ion-segment-button>
+  
+
+  </ion-segment>
+  <!-- <ion-segment scrollable="true" dir="rtl" [(ngModel)]="filtter" style="margin-top: 50px;" >
+    <ion-segment-button value="0"  style="font-family: Kufam !important;"  >  الكل
+    </ion-segment-button>
+    <ion-segment-button *ngFor="let cat of categories; let i = index" [value]="cat.id"   style="font-family: Kufam !important;">  
+      {{cat.code + ' ' + cat.name }} 
+    </ion-segment-button>
+
+  </ion-segment> -->
+  <ion-searchbar showCancelButton="focus" class="serachbar" color=
+  "dark" (ionChange)="onChange($event)" [(ngModel)]="search" ></ion-searchbar>
+  <ion-list class="list" [hidden] ="cat != 0">
+    
+    <ion-item *ngFor="let new of fillteredNews; let i = index"  class="item" (click)="OpenDetails(0 , i)">
+    <p class="label">{{new.cat.code + ' ' + new.cat.name }} 
+      <br>
+      <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+      <br> <span style="color: white; margin-top: 10px;">{{new.date.toDate() | date: 'dd/MM/yyyy'}}</span> 
+     
+      
+    </p>
+  
+    <ion-chip slot="end" >
+      <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+      <ion-icon name="eye" class="icon2"></ion-icon>
+    </ion-chip>
+    </ion-item>
+    </ion-list>
+    <ion-list class="list" [hidden] ="cat !=1">
+      <ion-item *ngFor="let new of fillteredAnalysis; let i = index"  class="item" (click)="OpenDetails(1 , i)">
+      <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br >
+        <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+        <br> <span style="color: white; margin-top: 10px;">{{new.date.toDate() | date: 'dd/MM/yyyy'}}</span> 
+      </p>
+      <ion-chip slot="end" >
+        <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+        <ion-icon name="eye" class="icon2"></ion-icon>
+      </ion-chip>
+      </ion-item>
+      </ion-list>
+      <ion-list class="list" [hidden] ="cat != 2">
+        <ion-item *ngFor="let new of fillteredRecommindation; let i = index"  class="item" (click)="OpenDetails(2 , i)">
+        <p class="label">{{new.cat.code + ' ' + new.cat.name }} <br >
+          <span style="color: white; margin-top: 10px;">{{new.title}}</span> 
+          <br [hidden]="new.state != '1' ">    <span style="color: red; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '1' "> غير مفعله  </span> 
+          <br [hidden]="new.state != '2' ">    <span style="color: blue; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '2'">  مفعله  </span> 
+          <br [hidden]="new.state != '3' ">    <span style="color: yellow; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '3'">  وقف خساره   </span> 
+          <br [hidden]="new.state != '4' ">    <span style="color: purple; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '4'">  هدف اول   </span> 
+          <br [hidden]="new.state != '5' ">    <span style="color: saddlebrown; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '5'"> هدف ثاني   </span> 
+          <br [hidden]="new.state != '6' ">    <span style="color: teal; margin-top: 10px; font-size: 11pt;" 
+          [hidden]="new.state != '6'"> هدف ثالث   </span> 
+          <br> <span style="color: white; margin-top: 10px;">{{new.date.toDate() | date: 'dd/MM/yyyy'}}</span> 
+        </p>
+          <ion-chip slot="end" >
+            <ion-label style="color: white; font-size: 9pt;">{{new.watch}}</ion-label>
+            <ion-icon name="eye" class="icon2"></ion-icon>
+          </ion-chip>
+       
+        </ion-item>
+        </ion-list>
+      </div>
+</ion-content>

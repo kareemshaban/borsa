@@ -1,0 +1,58 @@
+.logo{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.logo2{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+ion-content{
+    --background: url('../../../assets/images/bg.png') no-repeat center center / cover;
+}
+.card{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    opacity: 1 ;
+
+}
+.input{
+    color: #CDB585;
+    width: 90%;
+    display: block;
+    margin: 15px auto;
+   font-size: 11pt;
+   text-align: right;
+   background-color: transparent;
+   background: transparent;
+   --background: transparent ;
+   box-shadow: none;
+
+}
+.share-icon{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    color: #CDB585;
+    
+}
